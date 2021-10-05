@@ -25,7 +25,11 @@
                         <div class="form-group text-white text-capitalize font-weight-bold mt-3">
                             <input type="password" name="user_password" placeholder="password" class="form-control form-control-md form-control-lg w-50" id="tags">
                         </div>
+                        <div class="form-group">
+                            <a href="forgot_pass.php" class="text-primary">Forgot your password? </a>
+                        </div>
                         <div class="form-group"><input type="submit" name="login" value="login" class="btn btn-primary text-capitalize  font-weight-bold" id=""></div>
+
                     </form>
                 </div>
             </div>
@@ -33,7 +37,7 @@
                 <h2 class="text-white font-weight-bold py-2 w-75 text-capitalize">Sign up today, to have access to all our products</h2>
                 <?php
                 $nameErr = $emailErr = $passErr = "";
-                $user_name = $user_firstname = $user_email = $user_role = $user_password = $user_lastname =$success= "";
+                $user_name = $user_firstname = $user_email = $user_role = $user_password = $user_lastname = $success = "";
                 if (isset($_POST['submit'])) {
                     $user_name = $_POST['user_name'];
                     $user_email = $_POST['user_email'];
@@ -57,7 +61,7 @@
                         $db_user_email =  $row['user_email'];
 
 
-                        if (!empty($user_name) && !empty($user_email) && !empty($user_password) && $user_name === $db_user_name && $user_email === $db_user_email) {
+                        if (!empty($user_name) && !empty($user_email) && !empty($user_password) && $user_name !== $db_user_name && $user_email !== $db_user_email) {
                             $user_name = mysqli_real_escape_string($connection, $user_name);
                             $user_email = mysqli_real_escape_string($connection, $user_email);
                             $user_role = mysqli_real_escape_string($connection, $user_role);
@@ -67,7 +71,9 @@
 
                             $query_insert = "INSERT INTO users (user_name, user_firstname, user_lastname, user_email, user_password, user_role) VALUES ('$user_name', '$user_firstname', '$user_lastname', '$user_email', '$user_password', '$user_role')";
                             $result_create = mysqli_query($connection, $query_insert);
+                            
                             $success = "<h6 class=text-success text-center'>Sign up successful</h6>";
+                            header("Location:sign_up.php");
                         } elseif ($user_name === $db_user_name) {
                             $nameErr = "username is used by another user";
                         } elseif ($user_email === $db_user_email) {
@@ -85,7 +91,7 @@
                             $user_password = mysqli_real_escape_string($connection, $user_password);
                             $user_firstname = mysqli_real_escape_string($connection, $user_firstname);
                             $user_lastname = mysqli_real_escape_string($connection, $user_lastname);
-                            $user_password=password_hash($user_password, PASSWORD_BCRYPT, array('cost'=>12));
+                            $user_password = password_hash($user_password, PASSWORD_BCRYPT, array('cost' => 12));
                             $query_insert = "INSERT INTO users (user_name, user_firstname, user_lastname, user_email, user_password, user_role) VALUES ('$user_name', '$user_firstname', '$user_lastname', '$user_email', '$user_password', '$user_role')";
                             $result_create = mysqli_query($connection, $query_insert);
                             echo "<h6 class=text-success text-center'>Sign up successful</h6>";
