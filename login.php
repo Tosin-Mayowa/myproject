@@ -39,9 +39,6 @@ if (isset($_POST['login'])) {
         $_SESSION['user_role'] = $db_user_role;
     }
 }
-
-
-
 ?>
 
 <?php include "./includes/header.php"; ?>
