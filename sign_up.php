@@ -6,8 +6,8 @@
 <?php include "./includes/header.php"; ?>
 
 
-<header id="header" class="sign">
-    <div class="container">
+<section id="header" class="sign">
+    <div class="container mt-4">
         <div class="row height align-items-center">
             <div class="col-md-8">
                 <h1 class="text-white text-capitalize font-weight-bold font-italic">
@@ -37,14 +37,14 @@
                 <h2 class="text-white font-weight-bold py-2 w-75 text-capitalize">Sign up today, to have access to all our products</h2>
                 <?php
                 $nameErr = $emailErr = $passErr = "";
-                $user_name = $user_firstname = $user_email = $user_role = $user_password = $user_lastname = $success = "";
+                $user_name = $user_firstname = $user_email = $user_role = $user_password = $user_secret = $success = "";
                 if (isset($_POST['submit'])) {
                     $user_name = $_POST['user_name'];
                     $user_email = $_POST['user_email'];
                     $user_role = $_POST['user_role'];
                     $user_password = $_POST['user_password'];
                     $user_firstname = $_POST['user_firstname'];
-                    $user_lastname = $_POST['user_lastname'];
+                    $user_secret = $_POST['user_secret'];
                     /* $post_image = $_FILES['post_image']['name'];
     $post_image_temp = $_FILES['post_image']['tmp_name'];
 
@@ -61,17 +61,17 @@
                         $db_user_email =  $row['user_email'];
 
 
-                        if (!empty($user_name) && !empty($user_email) && !empty($user_password) && $user_name !== $db_user_name && $user_email !== $db_user_email) {
+                        if (!empty($user_name) && !empty($user_email) && !empty($user_password) && !empty($user_secret) && $user_name !== $db_user_name && $user_email !== $db_user_email) {
                             $user_name = mysqli_real_escape_string($connection, $user_name);
                             $user_email = mysqli_real_escape_string($connection, $user_email);
                             $user_role = mysqli_real_escape_string($connection, $user_role);
                             $user_password = mysqli_real_escape_string($connection, $user_password);
                             $user_firstname = mysqli_real_escape_string($connection, $user_firstname);
-                            $user_lastname = mysqli_real_escape_string($connection, $user_lastname);
-
-                            $query_insert = "INSERT INTO users (user_name, user_firstname, user_lastname, user_email, user_password, user_role) VALUES ('$user_name', '$user_firstname', '$user_lastname', '$user_email', '$user_password', '$user_role')";
+                            $user_secret = mysqli_real_escape_string($connection, $user_secret);
+                            $user_password = password_hash($user_password, PASSWORD_BCRYPT, array('cost' => 12));
+                            $query_insert = "INSERT INTO users (user_name, user_firstname, user_secret, user_email, user_password, user_role) VALUES ('$user_name', '$user_firstname', '$user_secret', '$user_email', '$user_password', '$user_role')";
                             $result_create = mysqli_query($connection, $query_insert);
-                            
+
                             $success = "<h6 class=text-success text-center'>Sign up successful</h6>";
                             header("Location:sign_up.php");
                         } elseif ($user_name === $db_user_name) {
@@ -84,15 +84,15 @@
                     } else {
 
 
-                        if (!empty($user_name) && !empty($user_email) && !empty($user_password)) {
+                        if (!empty($user_name) && !empty($user_email) && !empty($user_password) && !empty($user_secret)) {
                             $user_name = mysqli_real_escape_string($connection, $user_name);
                             $user_email = mysqli_real_escape_string($connection, $user_email);
                             $user_role = mysqli_real_escape_string($connection, $user_role);
                             $user_password = mysqli_real_escape_string($connection, $user_password);
                             $user_firstname = mysqli_real_escape_string($connection, $user_firstname);
-                            $user_lastname = mysqli_real_escape_string($connection, $user_lastname);
+                            $user_secret = mysqli_real_escape_string($connection, $user_secret);
                             $user_password = password_hash($user_password, PASSWORD_BCRYPT, array('cost' => 12));
-                            $query_insert = "INSERT INTO users (user_name, user_firstname, user_lastname, user_email, user_password, user_role) VALUES ('$user_name', '$user_firstname', '$user_lastname', '$user_email', '$user_password', '$user_role')";
+                            $query_insert = "INSERT INTO users (user_name, user_firstname, user_secret, user_email, user_password, user_role) VALUES ('$user_name', '$user_firstname', '$user_secret', '$user_email', '$user_password', '$user_role')";
                             $result_create = mysqli_query($connection, $query_insert);
                             echo "<h6 class=text-success text-center'>Sign up successful</h6>";
                         } else {
@@ -109,10 +109,6 @@
                         <input type="text" name="user_firstname" value="<?php echo htmlentities($user_firstname); ?> " class="form-control form-control-lg" id="author">
                     </div>
 
-                    <div class="form-group text-white text-capitalize font-weight-bold mt-3">
-                        <label for="title">lastname</label>
-                        <input type="text" name="user_lastname" value="<?php echo htmlentities($user_lastname); ?> " class="form-control form-control-lg" id="title">
-                    </div>
 
                     <div class="form-group text-white text-capitalize font-weight-bold mt-3">
                         <label for="user">username <span class="text-danger">*</span> </label>
@@ -127,10 +123,11 @@
                         <span class="text-danger"> <?php echo $emailErr ?></span>
                     </div>
 
-                    <!-- <div class="form-group mt-3">
-        <label for="image">post_image</label>
-        <input type="file" name="post_image" class="form-control form-control-lg" id="image">
-    </div> -->
+                    <div class="form-group text-white text-capitalize font-weight-bold mt-3">
+                        <label for="title">secret question?<span class="text-danger">*</span></label>
+                        <input type="text" name="user_secret" class="form-control form-control-lg" id="title">
+                    </div>
+
 
                     <div class="form-group text-white text-capitalize font-weight-bold mt-3">
                         <label for="tags">password<span class="text-danger">*</span></label>
@@ -148,4 +145,5 @@
             </div>
         </div>
     </div>
+</section>
 </header>
