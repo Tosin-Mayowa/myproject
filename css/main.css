@@ -1,0 +1,80 @@
+ body {
+     font-family: 'Itim', cursive;
+     font-family: 'Roboto', sans-serif;
+
+ }
+
+ /* body {
+    margin: 0px;
+padding: 0px;
+box-sizing: border-box;
+
+} */
+ .height {
+     min-height: 100vh;
+
+ }
+
+ .headingt {
+     display: flex;
+     flex-direction: column;
+
+ }
+
+ .title-underline {
+     width: 100px;
+     height: 10px;
+     margin: 0 auto;
+ }
+
+ .sign {
+     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../image/projectfor.jpg')center/cover fixed no-repeat;
+ }
+
+ .height-80 {
+     min-height: 80vh;
+
+ }
+
+ .about-image {
+     background: url('../image/abtnew.jpg')center/cover fixed no-repeat;
+ }
+
+ .banner {
+     background: #0077b6;
+ }
+
+ .paint {
+     color: #caf0f8;
+ }
+
+ .proj {
+     color: #0077b6;
+ }
+
+ .myset {
+     flex: 1 0 auto;
+
+ }
+
+ .reg {
+     background-color: grey;
+ }
+
+ #logout {
+
+     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../image/homenew.jpg')center/cover fixed no-repeat;
+ }
+
+
+ #filler {
+     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../image/projectfor.jpg')center/cover fixed no-repeat;
+ }
+
+ .form-bg {
+     background-color: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6));
+ }
+
+ .headerbg {
+     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../image/face.jpg')center/cover fixed no-repeat;
+ }
