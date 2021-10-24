@@ -1,6 +1,6 @@
 <?php include "./includes/header.php"; ?>
 
-    <section class="headerbg myset">
+    <header class="headerbg myset mt-5 height">
         <div class="container">
             <div class="row height align-items-center">
                 <div class="col-md-8">
@@ -30,8 +30,7 @@
                 </div>
             </div>
         </div>
-    </section>
-
+    
 </header>
 <!--skill section-->
 <section id="skills" class="py-5 banner">

@@ -28,10 +28,11 @@ if (isset($_SESSION['user_role'])) {
     <link href="./css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Itim&family=Roboto&display=swap" rel="stylesheet">
     <script src="js/all.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -42,8 +43,62 @@ if (isset($_SESSION['user_role'])) {
 </head>
 
 <body>
-    <header id="header" class="height">
-        <nav class="fixed-top">
+    <!-- navbar-->
+    <nav class="navs bg-info fixed-top">
+        <!-- logo-->
+        <div class="nav_header">
+            <img src="./image/logo60r.png" alt="">
+                <span class="navs_btn" id="spa">
+                    <i class="fa fa-bars"></i>
+                </span>
+        </div>
+        <ul class="nav_links" id="homnav">
+            <li class="nav_item">
+                <a class="nav_single_link " href="#">home</a>
+            </li>
+
+            <li class="nav_item">
+                <a class="nav_single_link " href="#skills">services</a>
+            </li>
+            <li class="nav_item">
+                <a class="nav_single_link " href="#about">about</a>
+            </li>
+            <li class="nav_item">
+                <a class="nav_single_link " href="#project">project</a>
+            </li>
+            <li class="nav_item">
+                <a class="nav_single_link" href="#team">our team</a>
+            </li>
+            <li class="nav_item">
+                <a class="nav_single_link" href="#blog">blog post</a>
+            </li>
+            <li class="nav_item">
+                <a class="nav_single_link" href="#contact">contact</a>
+            </li>
+        </ul>
+        <div>
+            <a href="sign_up.php"><button class="btn btn-warning mr-2 my-2" type="submit">sign up</button></a>
+            <a href="sign_up.php"><button class="btn btn-primary my-2" type="submit">login</button></a>
+        </div>
+
+        
+    </nav>
+
+
+
+
+    <!--end navbar-->
+
+
+
+
+
+
+
+
+
+
+    <!--  <nav class="fixed-top">
             <div class="container-fluid bg-info">
                 <div class="row">
                     <div class="col-3 d-flex justify-content-around">
@@ -85,4 +140,4 @@ if (isset($_SESSION['user_role'])) {
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav> -->

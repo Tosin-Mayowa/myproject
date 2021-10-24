@@ -6,8 +6,8 @@
 <?php include "./includes/header.php"; ?>
 
 
-<section id="header" class="sign">
-    <div class="container mt-4">
+<section id="header" class="sign pt-3">
+    <div class="container mt-5">
         <div class="row height align-items-center">
             <div class="col-md-8">
                 <h1 class="text-white text-capitalize font-weight-bold font-italic">
