@@ -1,7 +1,48 @@
 <?php include "includes/header.php"; ?>
+<nav class="navs bg-info fixed-top">
+    <!-- logo-->
+    <div class="nav_header">
+        <img src="./image/logo60r.png" alt="">
+        <span class="navs_btn" id="spa">
+            <i class="fa fa-bars"></i>
+        </span>
+    </div>
+    <ul class="nav_links" id="homnav">
+        <li class="nav_item">
+            <a class="nav_single_link " href="/index.php">home</a>
+        </li>
+
+        <li class="nav_item">
+            <a class="nav_single_link " href="#skills">services</a>
+        </li>
+        <li class="nav_item">
+            <a class="nav_single_link " href="#about">about</a>
+        </li>
+        <li class="nav_item">
+            <a class="nav_single_link " href="#project">project</a>
+        </li>
+        <li class="nav_item">
+            <a class="nav_single_link" href="#team">our team</a>
+        </li>
+        <li class="nav_item">
+            <a class="nav_single_link" href="#blog">blog post</a>
+        </li>
+        <li class="nav_item">
+            <a class="nav_single_link" href="#contact">contact</a>
+        </li>
+    </ul>
+    <div>
+        <a href="sign_up.php"><button class="btn btn-warning mr-2 my-2" type="submit">sign up</button></a>
+        <a href="sign_up.php"><button class="btn btn-primary my-2" type="submit">login</button></a>
+    </div>
+
+
+</nav>
+
+
 
 <!-- blog Page section -->
-<section id="blog" class="bg-primary">
+<section id="blog" class="bg-primary mt-5 pt-5">
     <div class="container">
 
         <div class="row">

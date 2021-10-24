@@ -1,36 +1,77 @@
 <?php include "./includes/header.php"; ?>
+<!-- nav begins -->
+<nav class="navs bg-info fixed-top">
+    <!-- logo-->
+    <div class="nav_header">
+        <img src="./image/logo60r.png" alt="">
+        <span class="navs_btn" id="spa">
+            <i class="fa fa-bars"></i>
+        </span>
+    </div>
+    <ul class="nav_links" id="homnav">
+        <li class="nav_item">
+            <a class="nav_single_link " href="/index.php">home</a>
+        </li>
 
-    <header class="headerbg myset pt-3 height">
-        <div class="container">
-            <div class="row height align-items-center">
-                <div class="col-md-8">
-                    <h1 class="text-white text-capitalize font-weight-bold font-italic">
-                        <strong>Digital marketing</strong><br>
-                        <small>and web development agency</small>
-                    </h1>
-                    <p class="text-white lead py-2 w-75">We can increase your sales beyond your imagination within a short period of time, and we solve all backend problems with PHP</p>
-                    <a href="#skills" class="btn btn-outline-info btn-lg m-2 text-capitalize">click here</a>
-                </div>
-                <div class="col-md-4">
-                    <h2 class="text-white font-weight-bold py-2 w-75 text-capitalize">Are you having difficulties selling your products? Fill the form below to talk to an expert.</h2>
-                    <form action="" method="post" class="form-group" enctype="multipart/form-data">
-                        <div class="form-group mt-3">
-                            <input type="text" name="name" placeholder="Name of company" class="form-control form-control-lg" id="">
-                        </div>
-                        <div class="form-group mt-3">
-                            <input type="email" name="email" placeholder="Email" class="form-control form-control-lg" id="">
-                        </div>
-                        <div class="form-group mt-3">
-                            <textarea name="help" id="" placeholder="What can we do for you?" cols="30" rows="5"></textarea>
-                        </div>
-                        <div class="form-group mt-3">
-                            <input type="submit" name="phone" value="submit" class="btn btn-primary" id="">
-                        </div>
-                    </form>
-                </div>
+        <li class="nav_item">
+            <a class="nav_single_link " href="#skills">services</a>
+        </li>
+        <li class="nav_item">
+            <a class="nav_single_link " href="#about">about</a>
+        </li>
+        <li class="nav_item">
+            <a class="nav_single_link " href="#project">project</a>
+        </li>
+        <li class="nav_item">
+            <a class="nav_single_link" href="#team">our team</a>
+        </li>
+        <li class="nav_item">
+            <a class="nav_single_link" href="#blog">blog post</a>
+        </li>
+        <li class="nav_item">
+            <a class="nav_single_link" href="#contact">contact</a>
+        </li>
+    </ul>
+    <div>
+        <a href="sign_up.php"><button class="btn btn-warning mr-2 my-2" type="submit">sign up</button></a>
+        <a href="sign_up.php"><button class="btn btn-primary my-2" type="submit">login</button></a>
+    </div>
+
+
+</nav>
+
+<!-- nav ends -->
+<header class="headerbg myset pt-3 height">
+    <div class="container">
+        <div class="row height align-items-center">
+            <div class="col-md-8">
+                <h1 class="text-white text-capitalize font-weight-bold font-italic">
+                    <strong>Digital marketing</strong><br>
+                    <small>and web development agency</small>
+                </h1>
+                <p class="text-white lead py-2 w-75">We can increase your sales beyond your imagination within a short period of time, and we solve all backend problems with PHP</p>
+                <a href="#skills" class="btn btn-outline-info btn-lg m-2 text-capitalize">click here</a>
+            </div>
+            <div class="col-md-4">
+                <h2 class="text-white font-weight-bold py-2 w-75 text-capitalize">Are you having difficulties selling your products? Fill the form below to talk to an expert.</h2>
+                <form action="" method="post" class="form-group" enctype="multipart/form-data">
+                    <div class="form-group mt-3">
+                        <input type="text" name="name" placeholder="Name of company" class="form-control form-control-lg" id="">
+                    </div>
+                    <div class="form-group mt-3">
+                        <input type="email" name="email" placeholder="Email" class="form-control form-control-lg" id="">
+                    </div>
+                    <div class="form-group mt-3">
+                        <textarea name="help" id="" placeholder="What can we do for you?" cols="30" rows="5"></textarea>
+                    </div>
+                    <div class="form-group mt-3">
+                        <input type="submit" name="phone" value="submit" class="btn btn-primary" id="">
+                    </div>
+                </form>
             </div>
         </div>
-    
+    </div>
+
 </header>
 <!--skill section-->
 <section id="skills" class="py-5 banner">
@@ -76,7 +117,7 @@
                 <p class="paint">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque sunt cupiditate alias optio dignissimos voluptatem.</p>
                 <a href="" class="btn btn-outline-warning btn-block w-75 text-uppercase">read more</a>
             </div>
-            
+
         </div>
     </div>
 </section>
@@ -212,7 +253,7 @@
                 <?php
                 } ?>
                 <!--end of team member-->
-                
+
             </div>
 
         </div>
