@@ -35,6 +35,7 @@
 
                 ?>
                 <h6 class="text-success"><?php echo $success; ?></h6>
+
                 <form action="" method="post" enctype="multipart/form-data">
                     <div class="form-group text-white text-capitalize font-weight-bold mt-3">
                         <label for="status"> email <span class="text-danger">*</span></label>
@@ -60,7 +61,7 @@
 
                     <div class="form-group mt-3 mx-auto">
                         <input type="submit" name="submit" value="update" class="btn btn-primary text-capitalize  font-weight-bold" id="">
-                        <a href="sign_up.php"><button class="btn btn-primary my-2" type="submit">login</button></a>
+                        <span><a href="sign_up.php" class="btn btn-primary my-2">login</a></span>
                     </div>
 
                 </form>
